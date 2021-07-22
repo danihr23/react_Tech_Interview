@@ -1,10 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import GameField from "./components/gameField/gameField"
 
 function App() {
+
+
   return (
     <div className="App">
-    <h1>Hello Dany</h1>
+    <GameField/>
     </div>
   );
 }
