@@ -9,7 +9,7 @@ const GameField =()=>{
 
    
         return(
-            <div>
+            <div className="gameField">
     
               <Buttons/>
            
