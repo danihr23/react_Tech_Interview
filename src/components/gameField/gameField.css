@@ -1,0 +1,19 @@
+.gameField{
+    margin: auto;
+    text-align: center;
+    width:600px ;
+    padding: 15px;
+    background-color: darkgreen;
+}
+.gameField h1{
+    font-size: 50px;
+    color: goldenrod;
+}
+.betsInputs{
+    
+    border-top: 2px solid black;
+    margin:  15px auto;
+    width: 500px;
+    text-align: center;
+   
+}

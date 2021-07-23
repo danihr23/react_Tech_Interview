@@ -1,0 +1,16 @@
+.betField{
+    text-align: center;
+    margin: 15px; 
+
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+}
+.betFieldLabel{
+    font-size: 20px;
+    margin: 10px;
+    padding-top: 5px;
+}
+#bet{
+    width: 50px;
+}
