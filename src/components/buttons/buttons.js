@@ -6,61 +6,82 @@ import './buttons.css'
 
 const Buttons =() =>{
 
-    const [btns,setBtns]= useState([])
+    const [allButtonsNumbers,setAllButtonsNumbers]= useState([])
     const [clickState,setClickState]= useState({})
-    const [count,setCount]= useState(0)
-    let count1 =0;
+    const [clickedCount,setClickedCount]= useState(0)
+
 
   useEffect (()=>{
 
     let bntNumbers =[];
 
-    for (let i = 1; i <= 20; i++) {
+    for (let i = 1; i <= 80; i++) {
         bntNumbers.push(i);
         
     }
 
-    setBtns(bntNumbers)
+    setAllButtonsNumbers(bntNumbers)
   },[])
 
 
-  const onclickHandler =(e)=>{
+  const OnclickHandler =(e)=>{
     e.preventDefault();
 
-    //e.target.disabled=true;
-    let state =clickState[e.target.name];
+    
+    let buttonState =clickState[e.target.name];
    
-    console.log(state);
-     if(state!=true ){
-        setCount(prev=>prev+1)
+    console.log(buttonState);
+   
+   
+ if(buttonState!=true ){
+    setClickedCount(prev=>prev+1)
          console.log("dadsada");
          e.target.style.backgroundColor = "red"
+         
         return setClickState({...clickState,  [e.target.name]: true});
         
 
     }
-    setClickState({...clickState,  [e.target.name]: false});
-    setCount(prev=>prev-1);
-    e.target.style.backgroundColor = "lightblue"
-      //setCount(clickState.length)
+    else if(buttonState=true){
+       
+        setClickedCount(prev=>prev-1);
+        
+        e.target.style.backgroundColor = "lightblue"
+        return setClickState({...clickState,  [e.target.name]: false});
+    }
+    
+    
+      
   }
 
  
 
 
-  console.log(count);
+  console.log(clickedCount);
   console.log(clickState);
 
     return(
       <div className='buttonsWrap'>
-          {btns.map(x=>{
-                  return(
+          {allButtonsNumbers.map(x=>{
+              if(clickedCount==12 && clickState[x]!=true){
+                return(
+                    <article>
+                       
+                        <button type="button" className='btnClasic ' disabled  key={x} value={x} name={x}  onClick={(e)=>OnclickHandler(e)}>{x}</button>
+              
+                </article>
+                )
+              }
+              else{
+                     return(
                       <article>
                          
-                          <button type="button" className='btnClasic {btnColor}'  key={x} value={x} name={x}  onClick={(e)=>onclickHandler(e)}>{x}</button>
+                          <button type="button" className='btnClasic'  key={x} value={x} name={x}  onClick={(e)=>OnclickHandler(e)}>{x}</button>
                 
                   </article>
                   )
+              }
+               
               })}
       </div>
     )
