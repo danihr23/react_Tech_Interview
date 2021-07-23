@@ -1,7 +1,7 @@
 .betField{
     text-align: center;
     margin: 15px; 
-
+   
     display: flex;
     flex-direction: column;
     width: 100px;
@@ -12,5 +12,10 @@
     padding-top: 5px;
 }
 #bet{
+    margin-bottom: 20px;
     width: 50px;
+    background-color: darkslategray;
+    color: lightgrey;
+    border: none;
+    
 }
