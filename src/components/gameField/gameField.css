@@ -24,3 +24,7 @@
     background-color: darkslategray;
    
 }
+.betFieldsInput{
+    display: flex;
+    justify-content: space-around;
+}
