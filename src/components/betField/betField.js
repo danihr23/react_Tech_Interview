@@ -1,14 +1,24 @@
 import React, { useEffect, useState } from 'react'
-
+import {useDispatch} from 'react-redux'
 import './betfield.css'
 
 const BetField = ()=>{
  const[inputValue, setInputValue] = useState(1)
  
- const OnchangeHandler =(e)=>{
-    //const value = parseFloat(e.target.value)
-   setInputValue(e.target.value)
+ const dispatch = useDispatch();
 
+
+
+   dispatch({type:"BET",amount:inputValue})
+
+   //dispatch({type:"BET_DECREASE",amount:0.2})
+ const onclickDecreseBetHandler=()=>{
+    setInputValue(prev=> prev-0.2)
+    
+ }
+ const onclickIncreaseBetHandler=()=>{
+    setInputValue(prev=> prev+0.2)
+    //dispatch({type:"BET_ICREASE",amount:0.2})
  }
 
  
@@ -16,7 +26,9 @@ const BetField = ()=>{
         <div className="betField">
            <label className="betFieldLabel" htmlFor="bet">Bet</label>
            <span className="betFieldSpan">
-               <input type='number' id="bet" name='bet' min='1' step='0.1' value={parseFloat(inputValue).toFixed(2)} onChange={OnchangeHandler}/>
+           <button onClick={onclickIncreaseBetHandler} >+</button>
+               <input type='text' id="bet" name='bet' min='1'  value={parseFloat(inputValue).toFixed(2)} />
+               <button onClick={onclickDecreseBetHandler}>-</button>
            </span>
                             
         </div>

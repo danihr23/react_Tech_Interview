@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import {useDispatch} from 'react-redux'
 
 import './buttons.css'
 
@@ -9,7 +10,7 @@ const Buttons =() =>{
     const [allButtonsNumbers,setAllButtonsNumbers]= useState([])
     const [clickState,setClickState]= useState({})
     const [clickedCount,setClickedCount]= useState(0)
-
+    const dispatch = useDispatch();
 
   useEffect (()=>{
 
@@ -23,19 +24,19 @@ const Buttons =() =>{
     setAllButtonsNumbers(bntNumbers)
   },[])
 
-
+  dispatch({type:"BUTTONS_COUNT",amount:clickedCount})
   const OnclickHandler =(e)=>{
     e.preventDefault();
 
     
     let buttonState =clickState[e.target.name];
    
-    console.log(buttonState);
+    //console.log(buttonState);
    
    
  if(buttonState!=true ){
     setClickedCount(prev=>prev+1)
-         console.log("dadsada");
+        
          e.target.style.backgroundColor = "red"
          
         return setClickState({...clickState,  [e.target.name]: true});
@@ -50,6 +51,7 @@ const Buttons =() =>{
         return setClickState({...clickState,  [e.target.name]: false});
     }
     
+            
     
       
   }
@@ -57,8 +59,8 @@ const Buttons =() =>{
  
 
 
-  console.log(clickedCount);
-  console.log(clickState);
+//   console.log(clickedCount);
+//   console.log(clickState);
 
     return(
       <div className='buttonsWrap'>
