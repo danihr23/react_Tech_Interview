@@ -13,7 +13,9 @@ const PlaysField = ()=>{
 
 
  const onclickDecreseHandler=()=>{
-    setInputValue(prev=> prev-1)
+    if(inputValue>1){
+        setInputValue(prev=> prev-1)
+    }
     //dispatch({type:"PLAYS_DECREASE",amount:1})
  }
  const onclickIncreaseHandler=()=>{

@@ -11,10 +11,13 @@ const BetField = ()=>{
 
    dispatch({type:"BET",amount:inputValue})
 
-   //dispatch({type:"BET_DECREASE",amount:0.2})
+  
  const onclickDecreseBetHandler=()=>{
-    setInputValue(prev=> prev-0.2)
     
+    if(inputValue>1){
+        setInputValue(prev=> prev-0.2)
+    }
+     //dispatch({type:"BET_DECREASE",amount:0.2})
  }
  const onclickIncreaseBetHandler=()=>{
     setInputValue(prev=> prev+0.2)
