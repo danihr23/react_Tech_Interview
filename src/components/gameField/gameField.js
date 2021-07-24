@@ -3,7 +3,7 @@ import Buttons from "../buttons/buttons"
 import BetField from '../betField/betField'
 import CountDownTimer from '../countDownTimer/countDownTimer'
 import PlaysField from '../playsField/playsField'
-
+import PriceField from '../priceField/priceField'
 import './gameField.css'
 
 
@@ -18,6 +18,7 @@ const GameField =()=>{
                   <section className='betFieldsInput'>
                   <BetField/>
                   <PlaysField/>
+                  <PriceField/>
                   </section>
                     <CountDownTimer/>
               </div>
