@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Buttons from "../buttons/buttons"
 import BetField from '../betField/betField'
+import CountDownTimer from '../countDownTimer/countDownTimer'
 import './gameField.css'
 const GameField =()=>{
  
@@ -18,7 +19,7 @@ const GameField =()=>{
                   <section>
                   <BetField/>
                   </section>
-              
+                    <CountDownTimer/>
               </div>
               
             
