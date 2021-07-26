@@ -4,6 +4,7 @@ import BetField from '../betField/betField'
 import CountDownTimer from '../countDownTimer/countDownTimer'
 import PlaysField from '../playsField/playsField'
 import PriceField from '../priceField/priceField'
+import Comments from '../comments/comments'
 import './gameField.css'
 
 
@@ -20,7 +21,8 @@ const GameField =()=>{
                   <PlaysField/>
                   <PriceField/>
                   </section>
-                    <CountDownTimer/>
+                    <CountDownTimer/>\
+                    <Comments/>
               </div>
               
             
