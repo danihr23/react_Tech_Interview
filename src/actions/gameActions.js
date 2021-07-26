@@ -13,3 +13,7 @@ export  const buttonCount =(amount)=>{
 
 }
 
+export const comments =(amount)=>{
+    return{type:"COMMENTS",amount:amount};
+}
+

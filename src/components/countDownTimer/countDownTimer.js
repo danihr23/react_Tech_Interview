@@ -1,15 +1,26 @@
 
 import React, { useEffect, useState } from 'react'
-
+import {useDispatch} from 'react-redux'
+import{comments} from '../../actions/gameActions'
 
 const CountDownTimer =()=>{
 
     const [seconds,setSeconts] = useState(0)
     const [minutes,setMinutes] =useState(3)
+
+    const dispatch = useDispatch();
  
     useEffect(() => {
+
+      
         
         if(seconds==0 ){
+            fetch('https://jsonplaceholder.typicode.com/comments?postId=1')
+            .then(res=> res.json())
+            .then(result=>{
+                console.log(result);
+                dispatch(comments(result));
+            })
             setSeconts(59)
             setMinutes(prev=> prev-1)
             

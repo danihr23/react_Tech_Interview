@@ -7,11 +7,11 @@ import './priceField.css'
 
 const PriceField = () => {
 
-    const count = useSelector((store)=> store.count)
+    const count = useSelector((store)=> store.game.count)
    
-    const bet = useSelector((store)=> store.bet);
+    const bet = useSelector((store)=> store.game.bet);
     
-    const plays = useSelector(store=> store.plays);
+    const plays = useSelector(store=> store.game.plays);
 
     const store = useSelector((store)=>store)
 
