@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {useDispatch} from 'react-redux'
+
+import {bet} from '../../actions/gameActions'
 import './betfield.css'
 
 const BetField = ()=>{
@@ -9,7 +11,7 @@ const BetField = ()=>{
 
 
 
-   dispatch({type:"BET",amount:inputValue})
+   dispatch(bet(inputValue));
 
   
  const onclickDecreseBetHandler=()=>{

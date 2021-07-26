@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {useDispatch} from 'react-redux'
-
+import {buttonCount} from '../../actions/gameActions'
 import './buttons.css'
 
 
@@ -24,7 +24,7 @@ const Buttons =() =>{
     setAllButtonsNumbers(bntNumbers)
   },[])
 
-  dispatch({type:"BUTTONS_COUNT",amount:clickedCount})
+  dispatch(buttonCount(clickedCount))
   const OnclickHandler =(e)=>{
     e.preventDefault();
 

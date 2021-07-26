@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {useDispatch} from 'react-redux'
+
+import {plays} from '../../actions/gameActions'
 import './playsField.css'
 
 const PlaysField = ()=>{
@@ -9,7 +11,7 @@ const PlaysField = ()=>{
  
  
     
- dispatch({type:"PLAYS",amount:inputValue})
+ dispatch(plays(inputValue));
 
 
  const onclickDecreseHandler=()=>{
