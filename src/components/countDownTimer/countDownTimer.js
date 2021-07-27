@@ -15,7 +15,7 @@ const CountDownTimer =()=>{
       
         
         if(seconds==0 ){
-           for (let i = 0; i < 3; i++) {
+           
             fetch(`https://jsonplaceholder.typicode.com/comments?`)
             .then(res=> res.json())
             .then(result=>{
@@ -23,7 +23,7 @@ const CountDownTimer =()=>{
                 dispatch(comments(result));
             })
                
-           }
+           
             setSeconts(59)
             setMinutes(prev=> prev-1)
             
