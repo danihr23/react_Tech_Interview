@@ -9,7 +9,7 @@ const CountDownTimer =()=>{
     const [minutes,setMinutes] =useState(3)
 
     const dispatch = useDispatch();
- 
+    const arr=[]
     useEffect(() => {
 
       
@@ -19,8 +19,13 @@ const CountDownTimer =()=>{
             fetch(`https://jsonplaceholder.typicode.com/comments?`)
             .then(res=> res.json())
             .then(result=>{
-                console.log(result);
-                dispatch(comments(result));
+                result.map(x=>{
+                    //console.log(x.id);
+                    if(x.id <=12){
+                        arr.push(x)
+                    }
+                })
+                dispatch(comments(arr));
             })
                
            

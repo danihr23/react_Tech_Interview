@@ -16,11 +16,10 @@ function Comments() {
     return (
         <div>
            
-           {sortComents.map((x,index)=>{
+           {sortComents.map((x)=>{
 
-               while(index<12)
-               {
-                if(count==index && count>0){
+               
+                if(count==x.id ){
                     return(
                         <div style={{color: "red"}}>
                         {x.name}
@@ -33,7 +32,7 @@ function Comments() {
                     </div>
                        )
                 }
-               }
+               
              
               
            })}
