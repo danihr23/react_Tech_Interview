@@ -15,12 +15,15 @@ const CountDownTimer =()=>{
       
         
         if(seconds==0 ){
-            fetch('https://jsonplaceholder.typicode.com/comments?postId=1')
+           for (let i = 0; i < 3; i++) {
+            fetch(`https://jsonplaceholder.typicode.com/comments?`)
             .then(res=> res.json())
             .then(result=>{
                 console.log(result);
                 dispatch(comments(result));
             })
+               
+           }
             setSeconts(59)
             setMinutes(prev=> prev-1)
             

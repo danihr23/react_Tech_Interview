@@ -66,6 +66,8 @@ const Buttons =() =>{
       <div className='buttonsWrap'>
           {allButtonsNumbers.map(x=>{
               if(clickedCount==12 && clickState[x]!=true){
+
+                
                 return(
                     <article>
                        
