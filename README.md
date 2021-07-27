@@ -8,4 +8,7 @@ It is a SPA project for interview.
 ### How to run in local environment:
 
 navigate to frontend/ -> npm i react -> npm run start
+
+navigate to frontend/ -> npm i redux react-redux
+
 Open http://localhost to view it in the browser.
