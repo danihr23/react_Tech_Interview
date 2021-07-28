@@ -71,7 +71,7 @@ const Buttons =() =>{
                 return(
                     <article>
                        
-                        <button type="button" className='btnClasic ' disabled  key={x} value={x} name={x}  onClick={(e)=>OnclickHandler(e)}>{x}</button>
+                        <button type="button" className='btnClassic ' disabled  key={x} value={x} name={x}  onClick={(e)=>OnclickHandler(e)}>{x}</button>
               
                 </article>
                 )
@@ -80,7 +80,7 @@ const Buttons =() =>{
                      return(
                       <article>
                          
-                          <button type="button" className='btnClasic'  key={x} value={x} name={x}  onClick={(e)=>OnclickHandler(e)}>{x}</button>
+                          <button type="button" className='btnClassic'  key={x} value={x} name={x}  onClick={(e)=>OnclickHandler(e)}>{x}</button>
                 
                   </article>
                   )

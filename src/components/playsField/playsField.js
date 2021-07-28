@@ -14,7 +14,7 @@ const PlaysField = ()=>{
  dispatch(plays(inputValue));
 
 
- const onclickDecreseHandler=()=>{
+ const onclickDecreaseHandler=()=>{
     if(inputValue>1){
         setInputValue(prev=> prev-1)
     }
@@ -30,9 +30,9 @@ const PlaysField = ()=>{
         <div className="playsField">
            <label className="playsFieldLabel" htmlFor="plays">Plays</label>
            <span className="playsFieldSpan">
-               <button onClick={onclickIncreaseHandler} >+</button>
+               <button  className="increaseDecreaseBtn" onClick={onclickIncreaseHandler} >+</button>
                <input type='text' id="plays" name='plays' min='1'  value={parseInt(inputValue)} />
-               <button onClick={onclickDecreseHandler}>-</button>
+               <button className="increaseDecreaseBtn" onClick={onclickDecreaseHandler}>-</button>
            </span>
                             
         </div>

@@ -21,8 +21,10 @@ const GameField =()=>{
                   <PlaysField/>
                   <PriceField/>
                   </section>
-                    <CountDownTimer/>\
+                    <CountDownTimer/>
+                    <section className="commentsField">
                     <Comments/>
+                    </section>
               </div>
               
             

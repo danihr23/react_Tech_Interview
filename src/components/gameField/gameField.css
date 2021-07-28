@@ -3,11 +3,13 @@
 
 
 .gameField{
-    margin: auto;
+    margin: 20px auto;
     text-align: center;
     width:500px ;
     padding: 15px;
     background-image: url('./casino-slot-machine-games-wallpaper.jpg');
+  
+    background-repeat: 'no-repeat';
     color: lightgrey;
 }
 .gameField h1{
@@ -19,7 +21,6 @@
     border-top: 2px solid black;
     margin:  15px auto;
     width: 500px;
-   
     text-align: center;
     background-color: darkslategray;
    
@@ -27,4 +28,22 @@
 .betFieldsInput{
     display: flex;
     justify-content: space-around;
+}
+.commentsField{
+    margin: 15px;
+    padding: 25px;
+}
+
+@media all and (max-width: 800px){
+.gameField{
+    width: 100%;
+    padding: 0;
+}
+.betsInputs{
+    width: 100%;
+}
+.gameField h1{
+    font-size: 30px;
+    
+}
 }

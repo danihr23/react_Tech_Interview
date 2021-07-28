@@ -9,10 +9,21 @@
 
 
 
-.btnClasic{
+.btnClassic{
     background:lightblue;
     height: 45px;
     width: 45px;
     text-align: center;
     margin: 2px;
+  
+}
+@media all and (max-width: 800px){
+    .buttonsWrap{
+        width: 100%;
+     
+    }
+    .btnClassic{
+        width: 31px;
+    height: 31px;
+    }
 }
