@@ -9,14 +9,14 @@ const initialState ={
          case "BUTTONS_COUNT":
              return {...state, count: action.amount};
 
-         case "BET":
-            return {...state, bet: action.amount};
-            // case "BET_DECREASE":
-            // return {...state, bet: state.bet-action.amount};
-         case "PLAYS":
-            return {...state, plays: action.amount};
-            // case "PLAYS_DECREASE":
-            // return {...state, plays:state.plays - action.amount};
+         case "BET_ICREASE":
+            return {...state, bet: state.bet+ action.amount};
+            case "BET_DECREASE":
+            return {...state, bet: state.bet-action.amount};
+         case "PLAYS_INCREASE":
+            return {...state, plays:state.plays+ action.amount};
+            case "PLAYS_DECREASE":
+            return {...state, plays:state.plays - action.amount};
          default:
              return state;
      }

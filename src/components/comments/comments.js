@@ -21,13 +21,13 @@ function Comments() {
                
                 if(count==x.id ){
                     return(
-                        <div style={{color: "red"}}>
+                        <div key={x.id} style={{color: "red"}}>
                         {x.name}
                     </div>
                        )
                 }else{
                     return(
-                        <div >
+                        <div key={x.id} >
                         {x.name}
                     </div>
                        )

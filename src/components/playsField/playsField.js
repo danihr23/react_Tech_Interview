@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {useDispatch} from 'react-redux'
 
-import {plays} from '../../actions/gameActions'
+import {playsIncrease,playsDecrease} from '../../actions/gameActions'
 import './playsField.css'
 
 const PlaysField = ()=>{
@@ -10,19 +10,23 @@ const PlaysField = ()=>{
  const dispatch = useDispatch();
  
  
-    
- dispatch(plays(inputValue));
+
 
 
  const onclickDecreaseHandler=()=>{
     if(inputValue>1){
         setInputValue(prev=> prev-1)
+        dispatch(playsDecrease())
     }
-    //dispatch({type:"PLAYS_DECREASE",amount:1})
+    
  }
  const onclickIncreaseHandler=()=>{
     setInputValue(prev=> prev+1)
-    //dispatch({type:"PLAYS_INCREASE",amount:1})
+    dispatch(playsIncrease())
+ }
+
+ const onChangePlaysHandler =(e)=>{
+    const value= e.target.value
  }
 
  
@@ -31,7 +35,7 @@ const PlaysField = ()=>{
            <label className="playsFieldLabel" htmlFor="plays">Plays</label>
            <span className="playsFieldSpan">
                <button  className="increaseDecreaseBtn" onClick={onclickIncreaseHandler} >+</button>
-               <input type='text' id="plays" name='plays' min='1'  value={parseInt(inputValue)} />
+               <input type='text' id="plays" name='plays' min='1'  value={parseInt(inputValue)} onChange={e=>onChangePlaysHandler(e)} />
                <button className="increaseDecreaseBtn" onClick={onclickDecreaseHandler}>-</button>
            </span>
                             

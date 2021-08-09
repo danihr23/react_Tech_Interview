@@ -9,8 +9,16 @@
 
 
 
-.btnClassic{
+.btnClassicNoClicked{
     background:lightblue;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    margin: 2px;
+  
+}
+.btnClassicClicked{
+ background-color: red;
     height: 45px;
     width: 45px;
     text-align: center;

@@ -10,10 +10,9 @@ const CountDownTimer =()=>{
 
     const dispatch = useDispatch();
     const arr=[]
+
     useEffect(() => {
 
-      
-        
         if(seconds==0 ){
            
             fetch(`https://jsonplaceholder.typicode.com/comments?`)

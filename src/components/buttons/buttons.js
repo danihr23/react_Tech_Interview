@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import {useDispatch} from 'react-redux'
 import {buttonCount} from '../../actions/gameActions'
-import './buttons.css'
+import BtnStyle from './buttons.module.css'
+
 
 
 
@@ -22,9 +23,11 @@ const Buttons =() =>{
     }
 
     setAllButtonsNumbers(bntNumbers)
+    
   },[])
 
-  dispatch(buttonCount(clickedCount))
+ 
+  
   const OnclickHandler =(e)=>{
     e.preventDefault();
 
@@ -37,7 +40,7 @@ const Buttons =() =>{
  if(buttonState!=true ){
     setClickedCount(prev=>prev+1)
         
-         e.target.style.backgroundColor = "red"
+         //e.target.style.backgroundColor = "red"
          
         return setClickState({...clickState,  [e.target.name]: true});
         
@@ -47,7 +50,7 @@ const Buttons =() =>{
        
         setClickedCount(prev=>prev-1);
         
-        e.target.style.backgroundColor = "lightblue"
+        //e.target.style.backgroundColor = "lightblue"
         return setClickState({...clickState,  [e.target.name]: false});
     }
     
@@ -55,7 +58,10 @@ const Buttons =() =>{
     
       
   }
-
+ 
+  useEffect(() => {
+    dispatch(buttonCount(clickedCount))
+  }, [clickedCount])
  
 
 
@@ -63,24 +69,24 @@ const Buttons =() =>{
 //   console.log(clickState);
 
     return(
-      <div className='buttonsWrap'>
-          {allButtonsNumbers.map(x=>{
+      <div className={BtnStyle.buttonsWrap}>
+          {allButtonsNumbers.map((x)=>{
               if(clickedCount==12 && clickState[x]!=true){
 
                 
                 return(
-                    <article>
+                    <article  key={x.toString()} >
                        
-                        <button type="button" className='btnClassic ' disabled  key={x} value={x} name={x}  onClick={(e)=>OnclickHandler(e)}>{x}</button>
+                        <button  type="button"  className={clickState[x]!=true ? BtnStyle.btnClassicNoClicked : BtnStyle.btnClassicClicked} disabled   value={x} name={x}  onClick={(e)=>OnclickHandler(e)}>{x}</button>
               
                 </article>
                 )
               }
               else{
                      return(
-                      <article>
+                      <article key={x.toString()} >
                          
-                          <button type="button" className='btnClassic'  key={x} value={x} name={x}  onClick={(e)=>OnclickHandler(e)}>{x}</button>
+                          <button   type="button"  className={clickState[x]!=true ? BtnStyle.btnClassicNoClicked : BtnStyle.btnClassicClicked}  value={x} name={x}  onClick={(e)=>OnclickHandler(e)}>{x}</button>
                 
                   </article>
                   )
