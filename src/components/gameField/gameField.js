@@ -5,24 +5,23 @@ import CountDownTimer from '../countDownTimer/countDownTimer'
 import PlaysField from '../playsField/playsField'
 import PriceField from '../priceField/priceField'
 import Comments from '../comments/comments'
-import './gameField.css'
-
+import GameStyle from './gameField.module.css'
 
 const GameField =()=>{
  
         return(
-            <div className="gameField">
+            <div className={GameStyle.gameField}>
                 <h1>Game Tech</h1>
               <Buttons/>
-              <div className='betsInputs'>
+              <div className={GameStyle.betsInputs}>
                   <h2>Please, place your bet</h2>
-                  <section className='betFieldsInput'>
+                  <section className={GameStyle.betFieldsInput}>
                   <BetField/>
                   <PlaysField/>
                   <PriceField/>
                   </section>
                     <CountDownTimer/>
-                    <section className="commentsField">
+                    <section className={GameStyle.commentsField}>
                     <Comments/>
                     </section>
               </div>

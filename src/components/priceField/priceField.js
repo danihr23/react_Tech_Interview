@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import './priceField.css'
+import PriceStyle from './priceField.module.css'
 
 
 
@@ -19,9 +19,9 @@ const PriceField = () => {
     console.log(store);
     const price = (Number(plays)*Number(count)*Number(bet)).toFixed(2)
     return (
-        <div className='priceField'>
-            <h2 className='priceFieldLabel'>Price</h2>
-            <h3 className="priceFieldPrice">{price}</h3>
+        <div className={PriceStyle.priceField}>
+            <h2 className={PriceStyle.priceFieldLabel}>Price</h2>
+            <h3 className={PriceStyle.priceFieldPrice}>{price}</h3>
             
         </div>
     )

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {useDispatch} from 'react-redux'
 
 import {betIncrease,betDecrease} from '../../actions/gameActions'
-import './betfield.css'
+import BetFieldStyle from './betfield.module.css'
 
 const BetField = ()=>{
  const[inputValue, setInputValue] = useState(1)
@@ -35,11 +35,11 @@ const BetField = ()=>{
 
 
     return(
-        <div className="betField">
-           <label className="betFieldLabel" htmlFor="bet">Bet</label>
-           <span className="betFieldSpan">
+    <div className={BetFieldStyle.betField}>
+           <label className={BetFieldStyle.betFieldLabel} htmlFor="bet">Bet</label>
+           <span className={BetFieldStyle.betFieldSpan}>
            <button onClick={onclickIncreaseBetHandler} >+</button>
-               <input type='text' id="bet" name='bet' min='1'  value={parseFloat(inputValue).toFixed(2)}  onChange={e=>onChangeBetHandler(e)}/>
+               <input type='text'  className={BetFieldStyle.bet} id="bet" name='bet' min='1'  value={parseFloat(inputValue).toFixed(2)}  onChange={e=>onChangeBetHandler(e)}/>
                <button onClick={onclickDecreseBetHandler}>-</button>
            </span>
                             
