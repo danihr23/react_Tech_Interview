@@ -30,8 +30,17 @@
         width: 100%;
      
     }
-    .btnClassic{
+    .btnClassicNoClicked{
+        background:lightblue;
         width: 31px;
     height: 31px;
     }
+    .btnClassicClicked{
+        background-color: red;
+        width: 31px;
+        height: 31px;
+
+    }
+
+
 }
